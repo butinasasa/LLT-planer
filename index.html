@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLT Planner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header> 
+        <img src="slike/llt-planner-logo.svg" alt="LLT Planner logo">
+
+        <nav> 
+            <a href="#problem">Problem</a> 
+            <a href="#rjesenje">Rješenje</a>
+            <a href="#kalkulator">Kalkulator</a>
+            <a href="#video_audio">Video i audio</a>
+        </nav> 
+
+        <h1>LLT Planner</h1>
+        <p>Manje tablica. Više kontrole.</p>
+        <a href="#kalkulator" class="gumb">Isprobaj kalkulator</a>
+    
+        <details>
+            <summary>Kako je nastalo</summary>
+            <p>Logo u zaglavlju nacrtao sam u Inkscapeu na platnu veličine 32 × 32 px. Alatom za pravokutnik (R) napravio sam podlogu sa zaobljenim kutovima (Rx/Ry 8) i tri stupca različite duljine koje podsjećaju na stupce dijagrama, a alatom za elipsu (E, uz Ctrl) krug koji predstavlja kontrolu. Boje sam zadao u prozoru Fill and Stroke (Ctrl + Shift + F): podloga je Dark Teal #1E3A3A, trake su Off White #F7FAF8, a krug je Sage Green #8DB9A8.</p>
+        </details>
+    
+    </header>
+
+        <section id="problem">
+            <h2>Problem</h2>
+            
+            <details>
+                <summary>Kako je nastalo</summary>
+                <p>Stranicu sam izradio u Figmi, na okviru širine 1440 px. Prvo sam postavio vizualni identitet: paletu boja: #1E3A3A, Teal #3D7A70, Sage Green #8DB9A8 i font Inter. Stranicu sam podijelio u sedam sekcija. Svaka sekcija je pravokutnik preko cijele širine, s pozadinama koje se izmjenjuju kako bi se dijelovi jasno razlikovali. Mjesta za slike, graf i video za početak sam označio sivim kućicama. Svaki sloj i grupu imenovao sam po sekciji, da datoteka ostane pregledna.</p>
+            </details>
+
+            <p><b>Koji problem rješava.</b></p>
+            <p>Danas se proces planiranja LLT zaliha vodi kroz 4–5 različitih Excel tablica. Podaci su raspršeni na više mjesta i nisu objedinjeni u jedinstvenom pregledu. Zbog toga je teško brzo dobiti jasnu sliku o stanju komponenti i potrebama za nabavom.</p>
+            <p>Planiranje nabave dodatno otežavaju različiti čimbenici: minimalne količine narudžbe (MOQ), pakirne količine (MPQ), promjene cijena, promjenjivi rokovi isporuke (LT) i nestabilnost tržišta. Ako se komponenta s rokom isporuke od 9 mjeseci naruči samo tjedan dana prekasno, proizvodnja cijelog proizvoda možda neće moći započeti prema planu. S druge strane, naručivanje prevelikih količina stvara značajnu financijsku izloženost zbog kapitala vezanog u zalihama. </p>             
+            
+            <img src="slike/slika_problem.png" alt="problem">
+
+        </section>
+
+        <section id="rjesenje">
+            <h2>Rješenje</h2>
+
+                <details>
+                <summary>Kako je nastalo</summary>
+                <p>Stranica je složena od semantičkih HTML oznaka: header i nav za zaglavlje i izbornik, section za svaku sekciju, div za kartice i footer za podnožje, a kalkulator koristi input polja s oznakama label i gumb button. Raspored je napravljen u CSS-u pomoću Flexboxa i Grida, pa se kartice i polja same slažu u stupce i prilagođavaju užem zaslonu. Font je Inter s Google Fontsa (debljine 400–700). Boje su iz palete „Calm & Clarity”.</p>
+                </details>
+            
+            <div class="kartica">
+            <h3>Kalkulator</h3>
+            <p>Za jednu komponentu odmah pokaže kada i koliko treba naručiti.</p>
+            </div>
+
+            <div class="kartica">
+            <h3>Planer</h3>
+            <p>Sve komponente poredane su po roku narudžbe, s grafom zalihe kroz tjedne.</p>               
+            </div>
+
+            <div class="kartica">
+            <h3>PO tracker</h3>
+            <p>Prati svaku narudžbu od slanja do primitka i javlja kada dolazak kasni.</p>               
+            </div>
+            
+        </section>
+
+        <section id="kalkulator">
+            <h2>Kalkulator</h2>  
+
+            <label for="zaliha_sada">Zaliha sada (kom)</label>
+            <input type="number" id="zaliha_sada" placeholder="48014">
+
+            <label for="potrosnja">Potrošnja (kom)</label>
+            <input type="number" id="potrosnja" placeholder="7193">
+
+            <label for="sigurnosna">Sigurnosna zaliha (kom)</label>
+            <input type="number" id="sigurnosna" placeholder="31145">
+
+            <label for="put">Na putu (kom)</label>
+            <input type="number" id="put" placeholder="107500">
+
+            <label for="lt">Lead time (tj.)</label>
+            <input type="number" id="lt" placeholder="28">
+
+            <label for="pokrivenost">Pokrivenost narudžbe (tj.)</label>
+            <input type="number" id="pokrivenost" placeholder="13">
+
+            <button id="izracunaj">Izračunaj</button>
+            <div id="rezultat"></div>
+
+        </section>
+
+        <section id="video_audio">
+            <h2>Video i audio</h2>
+            <p>Ovo je video zapis koji sam napravio nekada davno, gdje sam video zapise i audio zapise koje sam sam snimio, pretvorio u youtube video. Koristio sam Sony Vegas Pro za video obradu, a Fruity loops za audio obradu zapisa. Za snimanje sam koristio gitaru, mikrofone i Pentax fotoaparat.</p>  
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tKNHrgi0y4U?si=LqnkQYxz4Bp0u5Tx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    
+    <footer>
+        <p>Saša Butina - Multimedijalni sustavi - 2026</p>
+    </footer>
+
+</body>
+</html>
